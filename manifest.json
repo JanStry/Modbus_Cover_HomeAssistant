@@ -1,0 +1,8 @@
+{
+  "domain": "modbus_cover",
+  "name": "Modbus Cover",
+  "version": "1.0.0",
+  "documentation": "https://github.com/",
+  "requirements": ["pymodbus>=3.0.0"],
+  "codeowners": ["@jeanke"]
+}
