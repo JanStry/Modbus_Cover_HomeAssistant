@@ -1,0 +1,18 @@
+
+  - platform: modbus_cover
+    hub: #hub name 
+    devices:
+      #cover name:
+        name: #cover name
+        slave: #id
+        coil_open: #coil to open
+        coil_close: #coil to close
+        travel_up: #travel up time in seconds
+        travel_down: #travel down time in seconds
+      #cover name:
+        name: #cover name
+        slave: #id
+        coil_open: #coil to open
+        coil_close: #coil to close
+        travel_up: #travel up time in seconds
+        travel_down: #travel down time in seconds
