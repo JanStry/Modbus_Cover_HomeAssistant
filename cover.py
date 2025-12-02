@@ -132,9 +132,6 @@ class CoverTimeModbus(CoverEntity, RestoreEntity):
     def assumed_state(self):
         return True
 
-    # -----------------------------
-    # Old working async_set_cover_position logic restored
-    # -----------------------------
     async def async_set_cover_position(self, **kwargs):
         if ATTR_POSITION in kwargs:
             position = kwargs[ATTR_POSITION]
@@ -159,9 +156,7 @@ class CoverTimeModbus(CoverEntity, RestoreEntity):
         await self._async_send_modbus_command(SERVICE_STOP_COVER)
         self.stop_auto_updater()
 
-    # -----------------------------
-    # Full set_position logic from old code
-    # -----------------------------
+
     async def set_position(self, position):
         current = self.tc.current_position()
         _LOGGER.debug("set_position requested: %d (current %d)", position, current)
@@ -210,9 +205,7 @@ class CoverTimeModbus(CoverEntity, RestoreEntity):
             await self._async_send_modbus_command(SERVICE_STOP_COVER)
             self.tc.stop()
 
-    # -----------------------------
-    # Modbus command sending (mirrors old _async_handle_command)
-    # -----------------------------
+
     async def _async_send_modbus_command(self, command):
         if command == SERVICE_OPEN_COVER:
             # Close coil off first
